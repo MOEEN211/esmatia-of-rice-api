@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+    <title>Upload Image</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Upload Image</h5>
+                <form method="post" enctype="multipart/form-data" action="{% url 'upload_image' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="custom-file">
+                            {{ form.image }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
